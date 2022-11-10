@@ -9,7 +9,7 @@
             <table class="table">
               <thead>
                 <tr>
-                    <th>Class Code</th>
+                  <th>Class Code</th>
                   <th> Class Name</th>
                   <th>Teacher Name</th>
                   <th>action</th>
