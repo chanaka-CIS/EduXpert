@@ -8,7 +8,7 @@
           <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{route('class_store')}}">
             @csrf
             <div class="card-header">
-              <h3 class="card-title">Student Add Form</h3>
+              <h3 class="card-title">Class Add Form</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -20,7 +20,11 @@
                 </div>
                 <div class="form-group">
                   <label for="teacherAddress">Teacher Name</label>
-                  <input type="select" class="form-control" name = "teacherName" id="teacherName" placeholder="Teacher Name">
+                  <select class="form-control" style="width: 100%" name="teachers">
+                    @foreach($teachers as $teacher)
+                        <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                    @endforeach
+                </select>
                 </div>
               </div>
               <!-- /.card-body -->

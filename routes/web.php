@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Teacher
 Route::get('/teacher_create', 'TeacherController@create')->name('teacher_create');
-Route::get('/teacher_edit', 'TeacherController@edit');
+Route::get('/teacher_edit', 'TeacherController@edit')->name('teacher_edit');
 Route::get('/teacher_list', 'TeacherController@index')->name('teacher_list');
 Route::post('/teacher_store', 'TeacherController@store')->name('teacher_store');
 Route::post('/teacher_update', 'TeacherController@update')->name('teacher_update');

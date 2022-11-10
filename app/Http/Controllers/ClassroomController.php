@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classroom;
+use App\Teacher;
 use Illuminate\Http\Request;
 
 class ClassroomController extends Controller
@@ -25,7 +26,8 @@ class ClassroomController extends Controller
      */
     public function create()
     {
-        return view('class.create');
+        $teachers = Teacher::all();
+        return view('class.create', compact('teachers'));
     }
 
     /**

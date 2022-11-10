@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card card-primary">
-          <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{route('/teacher_edit')}}">
+          <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{route('teacher_edit')}}">
             @csrf
             <div class="card-header">
               <h3 class="card-title">Teacher Add Form</h3>
