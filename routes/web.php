@@ -44,3 +44,20 @@ Route::get('/class_list', 'ClassroomController@index')->name('class_list');
 Route::post('/class_store', 'ClassroomController@store')->name('class_store');
 Route::post('/class_update', 'ClassroomController@update')->name('class_update');
 Route::get('/class_delete', 'ClassroomController@destroy')->name('class_delete');
+
+//Roles
+Route::get('/role_create', 'RolesController@create')->name('role_create');
+Route::get('/role_edit_user', 'RolesController@edit')->name('role_edit_user');
+Route::get('/role_list', 'RolesController@index')->name('role_list');
+Route::get('/user_list', 'RolesController@userIndex')->name('user_list');
+Route::post('/role_store', 'RolesController@store')->name('role_store');
+Route::post('/role_update', 'RolesController@update')->name('role_update');
+Route::get('/role_delete', 'RolesController@destroy')->name('role_delete');
+
+//Users
+Route::get('/user_create', 'UserController@create')->name('user_create');
+Route::get('/user_edit_user', 'RolesController@edit')->name('user_edit_user');
+Route::post('/user_store', 'UserController@store')->name('user_store');
+Route::post('/user_update', 'RolesController@update')->name('user_update');
+Route::get('/user_delete', 'RolesController@destroy')->name('user_delete');
+
