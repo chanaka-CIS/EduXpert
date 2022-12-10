@@ -7,9 +7,9 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>{{$attendent_precentage}}<sup style="font-size: 20px">%</sup></h3>
+              <h3>{{$marks_count}}</h3>
 
-              <p>Attendents</p>
+              <p>Subjects</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -22,9 +22,9 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>{{$subjects}}</h3>
+              <h3>{{$avg}}</h3>
 
-              <p>Subjects</p>
+              <p>Average</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -37,9 +37,9 @@
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3>{{$users}}</h3>
+              <h3>4</h3>
 
-              <p>Students</p>
+              <p>Rank</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
@@ -52,9 +52,9 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>{{$teachers}}</h3>
+              <h3>{{$attendent_precentage}}<sup style="font-size: 20px">%</sup></h3>
 
-              <p>Teachers</p>
+              <p>Attendent</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -65,6 +65,7 @@
         <!-- ./col -->
       </div>
       <!-- /.row -->
+      <!-- Main row -->
       <!-- /.row (main row) -->
     </div><!-- /.container-fluid -->
   </section>

@@ -39,7 +39,6 @@
 
 </head>
 <body>
-
     <!-- LOADER -->
     <div id="preloader">
         <img class="preloader" src="images/loader.gif" alt="">
@@ -153,8 +152,23 @@
                                     <li><a href="blog-single.html">Blog Single</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{route('login')}}">Login</a></li>
-                            <li><a href="{{route('register')}}">Register</a></li>
+                            <!-- Example single danger button -->
+                            <li class="dropdown hassubmenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="fa fa-angle-down"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{route('login')}}">Student</a></li>
+                                    <li><a href="{{route('login')}}">Parent</a></li>
+                                    <li><a href="{{route('login')}}">Teacher</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown hassubmenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Register <span class="fa fa-angle-down"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{route('register')}}">Student</a></li>
+                                    <li><a href="{{route('register')}}">Parent</a></li>
+                                    <li><a href="{{route('register')}}">Teacher</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </nav><!-- end navbar -->
@@ -168,9 +182,6 @@
                     <p>School Management System</p>
                     <small>EduXpert is the ideal choice for your organization, your business and your online education system. Create your online course now with unlimited page templates, color options, and menu features.</small>
                     <div class="btn-wrapper">
-                        <div class="text-center">
-                            <a href="{{route('register')}}" class="btn btn-primary wow slideInLeft">Register</a> &nbsp;&nbsp;&nbsp;<a href="{{route('login')}}" class="btn btn-default wow slideInRight">Login</a>
-                        </div>
                     </div><!-- end row -->
                 </div>
             </div>
@@ -254,6 +265,5 @@
     <script src="js/custom.js"></script>
     <!-- VIDEO BG PLUGINS -->
     <script src="js/videobg.js"></script>
-
 </body>
 </html>

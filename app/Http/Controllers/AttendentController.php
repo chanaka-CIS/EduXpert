@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
+use App\Attendent;
+use App\Classroom;
+use App\User;
 use Illuminate\Http\Request;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
-class StudentController extends Controller
+class AttendentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
-        return view('student.index', compact('students'));
+        return view('attendent.index');
     }
 
     /**
@@ -26,7 +26,15 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.create');
+        $classes  = Classroom::all();
+        $students = User::where('user_type', '=', 'student')->get();
+
+        return view('attendent.create', compact('classes', 'students'));
+    }
+
+    public function qrCodeGen()
+    {
+        return view('student_dashboard.QR.index');
     }
 
     /**
@@ -37,22 +45,22 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $teacher = new Student();
-        $teacher->name = $request->input('studentName');
-        $teacher->address = $request->input('studentAddress');
-        $teacher->user_id = 15;
+        $teacher = new Attendent();
+        $teacher->attendent = $request->input('flexRadioDefault');
+        $teacher->class_id = $request->input('classId');
+        $teacher->user_id = $request->input('studentId');
         $teacher->save();
 
-        return redirect('student_create')->with('status', 'teacher Added succesfully');
+        return redirect('attendent_create')->with('status', 'teacher Added succesfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\Attendent  $attendent
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(Attendent $attendent)
     {
         //
     }
@@ -60,10 +68,10 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\Attendent  $attendent
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(Attendent $attendent)
     {
         //
     }
@@ -72,10 +80,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Student  $student
+     * @param  \App\Attendent  $attendent
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, Attendent $attendent)
     {
         //
     }
@@ -83,18 +91,11 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Student  $student
+     * @param  \App\Attendent  $attendent
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Attendent $attendent)
     {
         //
-    }
-
-    public function qr_code_gen(){
-        // QR code with text
-
-
-        return view('student_dashboard.QR.index');
     }
 }

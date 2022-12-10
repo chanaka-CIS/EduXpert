@@ -77,9 +77,9 @@
 </head>
 <body>
     <div id="app">
-        @include('dashboard.navbar')
+        @include('parent_dashboard.dashboard.navbar')
 
-        @include('dashboard.slidebar')
+        @include('parent_dashboard.dashboard.slidebar')
 
 
         <main class="py-4">

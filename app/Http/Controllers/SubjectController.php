@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
+use App\Classroom;
+use App\Teacher;
+use App\Subject;
+use App\User;
 use Illuminate\Http\Request;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
-class StudentController extends Controller
+class SubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
-        return view('student.index', compact('students'));
+        return view('subjects.index');
     }
 
     /**
@@ -26,7 +27,10 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.create');
+        $teachers = User::where('user_type', '=', 'teacher')->get();
+        $classes = Classroom::all();
+
+        return view('subjects.create', compact('teachers', 'classes'));
     }
 
     /**
@@ -37,22 +41,22 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $teacher = new Student();
-        $teacher->name = $request->input('studentName');
-        $teacher->address = $request->input('studentAddress');
-        $teacher->user_id = 15;
-        $teacher->save();
+        $result = new Subject();
+        $result->sub_name = $request->input('subName');
+        $result->teacher_id = $request->input('teacherName');
+        $result->class_id = $request->input('className');
+        $result->save();
 
-        return redirect('student_create')->with('status', 'teacher Added succesfully');
+        return redirect('subject_create')->with('status', 'teacher Added succesfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(Subject $subject)
     {
         //
     }
@@ -60,10 +64,10 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(Subject $subject)
     {
         //
     }
@@ -72,10 +76,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Student  $student
+     * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, Subject $subject)
     {
         //
     }
@@ -83,18 +87,11 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Student  $student
+     * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Subject $subject)
     {
         //
-    }
-
-    public function qr_code_gen(){
-        // QR code with text
-
-
-        return view('student_dashboard.QR.index');
     }
 }

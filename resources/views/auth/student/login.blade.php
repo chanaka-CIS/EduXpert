@@ -11,7 +11,6 @@
     <title>Login</title>
   </head>
   <body>
-    <div style="padding-bottom: 100px;"></div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -47,17 +46,6 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                </div>
-                            </div>
-                            
-                            <div class="form-group row">
-                                <label for="userType" class="col-md-4 col-form-label text-md-right">User Type</label>
-                                <div class="col-md-6">
-                                    <select class="form-control" style="width: 100%" name="userType" required>
-                                          <option value="1">Student</option>
-                                          <option value="2">Teacher</option>
-                                          <option value="3">Parent</option>
-                                    </select>
                                 </div>
                             </div>
 

@@ -14,7 +14,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Chanaka Sandaruwan</a>
+          <a href="#" class="d-block">{{auth()->user()->name}}</a>
         </div>
       </div>
 
@@ -65,7 +65,7 @@
                 </ul>
               </li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="{{route('home')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -143,6 +143,29 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Subjects
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('subject_create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Subject</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('subject_index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Subject list</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Results
@@ -151,13 +174,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+                <a href="{{route('result_create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add results</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
+                <a href="{{route('result_list')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>result list</p>
                 </a>
@@ -174,13 +197,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="{{route('attendent_create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add attendance</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="{{route('attendent_index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Attendace list</p>
                 </a>
